@@ -2,7 +2,7 @@ import './Codle.css';
 import React, { useState, useEffect } from 'react';
 import OptionsMenu from './Components/OptionsMenu';
 import HowtoPlay from './Components/HowToPlay';
-function Game() {
+function Codle() {
 
   const [diff, setdiff] = useState("easy")
   const [codelength, setcodelength] = useState(4)
@@ -175,4 +175,4 @@ function Game() {
   );
 }
 
-export default Game;
+export default Codle;
