@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Codle from './Games/Codle/Codle.jsx'
+import Wordle from './Games/Wordle/Wordle.jsx'
+import Home from './Home.jsx'
+import NoPage from './NoPage.jsx'
+import Navbar from './Components/Navbar.jsx';
 function App() {
+
+  const [isDark, setisdark] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-theme={isDark ? "dark" : "light"}>
+    <BrowserRouter>
+    <Navbar setisdark = {setisdark} isDark = {isDark}/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="codle" element={<Codle />} />
+        <Route path="wordle" element={<Wordle />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

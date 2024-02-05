@@ -1,0 +1,14 @@
+.Home{
+    text-align: center;
+    background-color: var(--background);
+    min-height: 100vh;
+}
+.gamelist{
+    padding: 20px;
+    padding-top: 150px;
+}
+.row{
+    display: flex;
+    gap: 30px;
+}
+
