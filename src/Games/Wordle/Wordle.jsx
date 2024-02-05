@@ -69,6 +69,7 @@ function Wordle() {
     setinputcode(newArr);
     setlistofcodes(newList)
     setcurrenttrys(0)
+    setUsedLetters(letterList)
   }
 
   useEffect(() => {
@@ -170,24 +171,22 @@ function Wordle() {
   }
 
   function handleVictory(){
-    if(currentrys === codetrys){
-      alert("YOU LOSE!")
-      init()
-    }
-    else{
     let green = 0   
     inputcode.map((c) => {
-      if (c.color === "green") {
-        green++
-      }
-      return c
+    if (c.color === "green") {
+      green++
+    }
+    return c
     })
     if(green === codelength){
-      alert("¡YOU WIN!")
       init();
+      alert("¡YOU WIN!")
     }
+    else if(currentrys === codetrys){
+      init()
+      alert("YOU LOSE!")
     }
-  }
+}
 
   return (
     <div className='Wordle' data-theme="">

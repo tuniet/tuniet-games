@@ -32,19 +32,19 @@ function UsedLetters(props) {
                 <div className='keyrow'>
                 {props.usedletters.map((l, i) =>{
                   if(i < 10)
-                  return <span className='letter' style={{backgroundColor: l.color}}>{l.letter}</span>
+                  return <span key={i} className='letter' style={{backgroundColor: l.color}}>{l.letter}</span>
                 })}
                 </div>
                 <div className='keyrow'>
                 {props.usedletters.map((l, i) =>{
                   if(i >= 10 && i < 19)
-                  return <span className='letter' style={{backgroundColor: l.color}}>{l.letter}</span>
+                  return <span key={i} className='letter' style={{backgroundColor: l.color}}>{l.letter}</span>
                 })}
                 </div>
                 <div className='keyrow'>
                 {props.usedletters.map((l, i) =>{
                   if(i >= 19)
-                  return <span className='letter' style={{backgroundColor: l.color}}>{l.letter}</span>
+                  return <span key={i} className='letter' style={{backgroundColor: l.color}}>{l.letter}</span>
                 })}
                 </div> 
             </section>
